@@ -28,7 +28,7 @@ router.post("/login", isValid, (req, res) => {
             const token = makeToken(user)
             res.status(200).json({
               message: `welcome, ${user.username}`,
-              token: token
+              token: token,
             })
           } else {
             res.status(401).json("invalid credentials")
@@ -49,9 +49,9 @@ function makeToken(user){
     return jwt.sign(payload, jwtSecret, options)
 }
 
-router.get("/usersplz", restricted, async (_, res) => {
+router.get("/usersplz", restricted, async (req, res) => {
     const data = await AuthModel.getAll()
-    res.status(200).json(data)
+    res.status(200).json({data: data, decoded: req.decodedToken})
 })
 
 module.exports = router
