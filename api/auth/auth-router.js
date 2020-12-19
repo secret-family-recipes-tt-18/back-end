@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken")
 const {jwtSecret} = require("../../config/secrets")
 const AuthModel = require("./auth-model")
 const { isValid, checkUsernameUnique} = require("./auth-middleware")
+const restricted = require('../middleware/restricted-middleware')
 
 router.post('/register', isValid, checkUsernameUnique, async (req, res) => {
     const credentails = req.body
@@ -47,5 +48,10 @@ function makeToken(user){
     }
     return jwt.sign(payload, jwtSecret, options)
 }
+
+router.get("/usersplz", restricted, async (_, res) => {
+    const data = await AuthModel.getAll()
+    res.status(200).json(data)
+})
 
 module.exports = router
