@@ -1,47 +1,61 @@
-# back-end
-Back End API
+# Backend
+Secret Fanily Recipes
 
-[POST] /api/auth/login/register
+## Documentation
+Base URL for deployed API: 
 
-allows you to register a new user to data base
+## **Endpoints**
 
-Data_Object = {
+| Method | URL | Description | Requires Token |
+|--------|-----|-------------|----------------|
+| POST | /api/auth/login/register | register a new user | - |
+| POST | /api/auth/login/login | login an existing user| - |
+| GET | /api/cook/ | give you all recipies | X |
+| GET | /api/cook/:id | gets recipe with givin ID with ingredients and steps | X |
+| POST | /api/cook/ | create a new recipe | X |
+| PUT | /api/cook/:id | Edit a recipe | X |
+| DELETE | /api/cook/:id | delete a reciope | X |
+
+## **Requests**
+
+## [POST] /api/auth/login/register
+
+```
+{
+    "username": "username",
+    "password": "password"
+}
+```
+
+## [POST] /api/auth/login/login
+
+```
+{
     username: "username",
     password: "password"
 }
+```
 
-[POST] /api/auth/login/login
+## [POST] /api/cook/
 
-allows you to log in with correct usert credentails
-
-Data_Object = {
-    username: "username",
-    password: "password"
-}
-
-[GET] /api/cook/  (Must have a valid token in the "Authorization" header for ALL /api/cook)
-
-give you all recipies without ingredients or steps
-
-[GET] /api/cook/:id
-
-give you recipe with givin ID with ingredients and steps
-
-[POST] /api/cook/
-
-post a new recipe with steps and ingredients
-Data structure for CREATING and UPDATING a new recipe:
-
-Data_Object = {
+```
+{
     name: "Recipe Name",
     category: "Category",
     description: "Description",
     ingredients: ["must", "be", "an", "array"]
     steps: ["is", "also", "an", "array"]
 }
+```
 
-[PUT] /api/cook/:id
-can change recipe with given RECIPE_ID use data structure above ^^^
+## [PUT] /api/cook/:id
 
-[DELETE] /api/cook/:id
-can delete reciepe with given ID
+```
+{
+    name: "Recipe Name",
+    category: "Category",
+    description: "Description",
+    ingredients: ["must", "be", "an", "array"]
+    steps: ["is", "also", "an", "array"]
+}
+```
