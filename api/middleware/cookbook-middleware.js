@@ -1,13 +1,34 @@
+const M = require("../cookBook/cookbook-model")
+
 function checkRecipe (req, res, next) {
-    if(!req.body.recipeName){
+    if(!req.body.name){
         res.status(401).json("Need a recipe name as recipeName")
     } else if (!req.body.ingredients) {
         res.status(401).json("You need at least one ingredient as ingredients")
-    } else if (!req.body.step || !req.body.stepNumber) {
-        res.status(401).json("you need a step and step number")
+    } else if (!req.body.steps) {
+        res.status(401).json("you need some steps")
     } else {
         next()
     }
 }
 
-module.exports = {checkRecipe}
+async function checkID(req, res, next){
+    try {
+        const id = req.params.id
+        console.log(id)
+        const users = [await M.getRecipeById(id) || null]
+        console.log(users)
+        if(users[0] === null){
+          res.status(401).json("did not provide correct id")
+        } else {
+            next()
+        }
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
+
+module.exports = {
+    checkRecipe,
+    checkID
+}
