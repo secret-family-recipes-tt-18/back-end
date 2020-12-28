@@ -15,9 +15,7 @@ function checkRecipe (req, res, next) {
 async function checkID(req, res, next){
     try {
         const id = req.params.id
-        console.log(id)
         const users = [await M.getRecipeById(id) || null]
-        console.log(users)
         if(users[0] === null){
           res.status(401).json("did not provide correct id")
         } else {

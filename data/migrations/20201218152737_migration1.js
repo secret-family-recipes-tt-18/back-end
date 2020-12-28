@@ -36,7 +36,6 @@ exports.up = function(knex) {
 })
 .createTable('step_ingredients', tbl => {
     tbl.increments()
-    tbl.string('quantity', 128)
     tbl.integer('step_id')
       .unsigned()
       .notNullable()

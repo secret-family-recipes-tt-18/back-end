@@ -7,9 +7,9 @@ exports.seed = function(knex) {
       return knex('ingredients').insert([
         {name: 'water', recipe_id: 1},
         {name: 'carrots', recipe_id: 1},
-        {name: 'ground beef', recipe_id: 1},
-        {name: 'tomatoes', recipe_id: 1},
-        {name: 'potatoes', recipe_id: 1}
+        {name: 'chicken', recipe_id: 1},
+        {name: 'noodles', recipe_id: 1},
+        {name: 'seasoning', recipe_id: 1}
       ]);
     });
 };

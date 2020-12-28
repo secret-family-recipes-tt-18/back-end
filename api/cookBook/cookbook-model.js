@@ -1,5 +1,5 @@
 const db = require("../../data/dbConfig")
-const UserModel = require('../auth/auth-model')
+
 
 async function findById(id){
     return db('recipes').where({id}).first()
@@ -126,7 +126,7 @@ async function deleteById(id){
     await db("recipes").where({id}).del()
     await db("ingredients").where("recipe_id", id).del()
     await db("steps").where("recipe_id", id).del()
-    return db("recipies")
+    return db("recipes")
 }
 
 module.exports = {
