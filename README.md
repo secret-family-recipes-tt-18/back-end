@@ -5,8 +5,10 @@ Secret Fanily Recipes
 Base URL for deployed API: https://tgif-secret-family-recipes-api.herokuapp.com/
 
 ## Notes
-every time I make a new change the database will reset
-tokens last 24 hours
+```
+Every time I make a new change the database will reset
+Tokens last 24 hours
+```
 
 ## **Endpoints**
 
