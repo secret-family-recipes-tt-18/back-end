@@ -2,7 +2,8 @@
 Secret Fanily Recipes
 
 ## Documentation
-Base URL for deployed API: 
+Base URL for deployed API: https://tgif-secret-family-recipes-api.herokuapp.com/
+note: tokens last 24 hours
 
 ## **Endpoints**
 
