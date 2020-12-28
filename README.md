@@ -43,7 +43,7 @@ Base URL for deployed API:
     name: "Recipe Name",
     category: "Category",
     description: "Description",
-    ingredients: ["must", "be", "an", "array"]
+    ingredients: ["must", "be", "an", "array"],
     steps: ["is", "also", "an", "array"]
 }
 ```
@@ -55,7 +55,7 @@ Base URL for deployed API:
     name: "Recipe Name",
     category: "Category",
     description: "Description",
-    ingredients: ["must", "be", "an", "array"]
+    ingredients: ["must", "be", "an", "array"],
     steps: ["is", "also", "an", "array"]
 }
 ```
@@ -68,7 +68,7 @@ Base URL for deployed API:
 {
     "id": 9999999,
     "username": "Username",
-    "password": "$2a$10$f2nfNqM6nmDq2/16TvfVXOAZhwgGqC5w2LIeU4RUF3wcBkV0P0812"
+    "password": "Ha$h3D Pa$$w0Rd"
 }
 ```
 
