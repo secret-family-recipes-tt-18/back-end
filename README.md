@@ -1,5 +1,5 @@
 # Backend
-Secret Fanily Recipes
+Secret Family Recipes
 
 ## Documentation
 Base URL for deployed API: https://tgif-secret-family-recipes-api.herokuapp.com/
