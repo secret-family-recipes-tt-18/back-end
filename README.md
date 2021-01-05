@@ -14,8 +14,8 @@ Tokens last 24 hours
 
 | Method | URL | Description | Requires Token |
 |--------|-----|-------------|----------------|
-| POST | /api/auth/login/register | register a new user | - |
-| POST | /api/auth/login/login | login an existing user| - |
+| POST | /api/auth/register | register a new user | - |
+| POST | /api/auth/login | login an existing user| - |
 | GET | /api/cook/ | give you all recipies | X |
 | GET | /api/cook/:id | gets recipe with givin ID with ingredients and steps | X |
 | POST | /api/cook/ | create a new recipe | X |
